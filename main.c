@@ -95,29 +95,14 @@ typedef struct {
 } profile;
 
 profile profiles[] = {
-    {red, {0, 0, 0, 0}, NULL, NULL},
-    {green, {0, 0, 0, 0}, NULL, NULL},
-    {blue, {0, 0, 0, 0}, NULL, NULL},
-    {rainbowHorizontal, {0, 0, 0, 0}, NULL, NULL},
-    {rainbowVertical, {0, 0, 0, 0}, NULL, NULL},
-    {animatedRainbowVertical, {3000, 2000, 1200, 600}, NULL, NULL},
     {animatedRainbowFlow, {1000, 400, 200, 140}, NULL, NULL},
-    {animatedRainbowWaterfall, {1600, 1200, 800, 400}, NULL, NULL},
-    {animatedBreathing, {1600, 1200, 800, 400}, NULL, NULL},
-    {animatedWave, {1200, 800, 400, 200}, NULL, NULL},
     {animatedSpectrum, {1600, 1200, 800, 400}, NULL, NULL},
-    {reactiveFade,
-     {400, 1600, 1200, 800},
-     reactiveFadeKeypress,
-     reactiveFadeInit},
-    {reactivePulse,
-     {400, 1600, 1200, 800},
-     reactivePulseKeypress,
-     reactivePulseInit}};
+    {animatedRainbowWaterfall, {1600, 1200, 800, 400}, NULL, NULL}
+};
 
 static uint8_t currentProfile = 0;
 static const uint8_t amountOfProfiles = sizeof(profiles) / sizeof(profile);
-static volatile uint8_t currentSpeed = 0;
+static volatile uint8_t currentSpeed = 2;
 static volatile uint16_t animationSkipTicks = 0;
 static uint32_t animationLastCallTime = 0;
 
